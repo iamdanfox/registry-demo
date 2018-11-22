@@ -10,7 +10,9 @@ jobs:
       - save_cache:
           key: npm-packages-{{ checksum "package-lock.json" }}
           paths: [ /root/project/node_modules ]
-      - run: ./node_modules/.bin/now --token "$NOW_TOKEN"
+      - run: |
+          URL=$(./node_modules/.bin/now --token "$NOW_TOKEN")
+          ./node_modules/.bin/now alias "$URL" registry-demo --token "$NOW_TOKEN"
 
 workflows:
   version: 2
