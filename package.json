@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "cp index.html build/release && cp -R api build/release && cp now.json build/release",
+    "predeploy": "mkdir -p build/release && cp index.html build/release && cp -R api build/release && cp now.json build/release",
     "deploy": "cd build/release && URL=$(now --token \"$NOW_TOKEN\") && now alias \"$URL\" registry-demo --token \"$NOW_TOKEN\""
   },
   "author": "iamdanfox",
