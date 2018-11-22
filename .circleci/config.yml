@@ -6,11 +6,11 @@ jobs:
     steps:
       - checkout
       - restore_cache: { key: 'npm-packages-{{ checksum "package-lock.json" }}' }
-      - npm install
+      - run: npm install
       - save_cache:
           key: npm-packages-{{ checksum "package-lock.json" }}
           paths: [ /root/project/node_modules ]
-      - ./node_modules/.bin/now --version
+      - run: ./node_modules/.bin/now --version
 
 workflows:
   version: 2
