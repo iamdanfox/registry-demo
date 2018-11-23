@@ -10,6 +10,7 @@ jobs:
       - save_cache:
           key: npm-packages-{{ checksum "package-lock.json" }}
           paths: [ /root/project/node_modules ]
+      - run: npm run tsc
       - run: npm run deploy
 
 workflows:
