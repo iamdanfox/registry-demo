@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "pretty": true,
+        "removeComments": false,
+        "sourceMap": false,
+        "strict": true,
+        "stripInternal": true,
+        "target": "es5",
+        "outDir": "../build/src"
+    }
+}

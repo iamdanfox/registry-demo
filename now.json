@@ -1,11 +1,11 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "api/echo/index.js", "use": "@now/node" },
-      { "src": "index.html", "use": "@now/static" }
-    ],
-    "routes": [
-      { "src": "/api.*", "dest": "/api/echo/index.js" } ,
-      { "src": "/.*", "dest": "/index.html" }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    { "src": "api.js", "use": "@now/node" },
+    { "src": "index.html", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/api.*", "dest": "/api.js" } ,
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}
