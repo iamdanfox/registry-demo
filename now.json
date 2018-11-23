@@ -3,5 +3,9 @@
     "builds": [
       { "src": "api/echo/index.js", "use": "@now/node" },
       { "src": "index.html", "use": "@now/static" }
+    ],
+    "routes": [
+      { "src": "/api.*", "dest": "/api/echo/index.js" } ,
+      { "src": "/.*", "dest": "/index.html" }
     ]
   }
