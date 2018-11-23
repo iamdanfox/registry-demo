@@ -6,12 +6,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "mkdir -p build/release && cp index.html build/release && cp -R api build/release && cp now.json build/release",
+    "tsc": "tsc",
+    "clean": "rm -rf build",
+    "copy-js": "cp -R build/src/. build/release",
+    "copy-html": "cp index.html build/release",
+    "copy-now": "cp now.json build/release",
+    "predeploy": "mkdir -p build/release && npm run copy-js && npm run copy-html && npm run copy-now",
     "deploy": "cd build/release && URL=$(now --token \"$NOW_TOKEN\") && now alias \"$URL\" registry-demo --token \"$NOW_TOKEN\""
   },
   "author": "iamdanfox",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^10.12.10",
     "now": "^12.1.5",
     "typescript": "^3.1.6"
   }

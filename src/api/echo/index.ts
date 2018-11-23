@@ -1,6 +1,6 @@
-const { parse } = require("url");
+import { parse } from "url";
 
-module.exports = (req, res) => {
+export = (req: any, res: any) => {
   const { query } = parse(req.url, true);
   res.end("Hello world" + JSON.stringify(query));
 };
